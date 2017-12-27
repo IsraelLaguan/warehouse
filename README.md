@@ -1,7 +1,18 @@
-# A-Frame School
+# My cool website
 
-Interactive workshop and lessons for learning A-Frame and WebVR. [See the School](https://aframevr.github.io/aframe-school/).
+This file describes your project to the community. What's your cool website about? What makes it special?
 
-[A-Frame](https://aframe.io) is a web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.
+ヽ(๏∀๏ )ﾉ
 
-Click and drag on desktop. Open it on a smartphone and use the device motion sensors. Or [plug in a VR headset](https://webvr.rocks)!
+## ← index.html
+
+Where you'll write the content of your website. 
+
+## ← styles.css
+
+CSS files add styling rules to your content
+
+## ← script.js
+
+If you're feeling fancy you can add interactivity to your site with Javascript
+

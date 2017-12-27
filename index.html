@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Textures - A-Frame School</title>
-    <meta name="description" content="Textures - A-Frame School">
+    <title>My First Try on Ambient - IsraelLaguan</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Some City Landscape" content="Setting some Buildings and objects, + some animation">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <a-asset-item id="build01" src="https://cdn.rawgit.com/IsraelLaguan/warehouse/960b231ca26164cfcdb4cbca4cb11b869e55921f/office-building.json"/>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
         <img id="box2Texture" src="https://i.imgur.com/SzFc1XF.jpg">
         <img id="coneTexture" src="https://i.imgur.com/GPKW048.jpg">
         <img id="sphereTexture" src="https://i.imgur.com/fdbrmn9g.jpg">
+        <img id="citysky" src="https://ucarecdn.com/9aab227b-b9ee-4342-9255-694fe58cfd85/" crossorigin="https://flic.kr/p/RzxAfT"/>
+        <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
+        <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
+        <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
       </a-assets>
-      <a-sky src="#skyTexture" radius="35"></a-sky>
-
+      <a-entity dynamic-body scale="2 2 2" geometry="primitive: sphere" position="0 6 -10" material="color: magenta; metalness:1; roughness: 0.1; sphericalEnvMap: #citysky;">
+        <!a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"/>
+      </a-entity>
       <a-box src="#boxTexture" position="-2 0.5 -4"></a-box>
       <a-sphere src="#sphereTexture" radius="0.5" position="0 0.5 -3"></a-sphere>
       <a-cone src="#coneTexture" height="2" radius-top="0.1" position="0 1 -6"></a-cone>
       <a-box src="#box2Texture" position="2 0.5 -4"></a-box>
-
-      <a-plane src="#groundTexture" rotation="-90 0 0" height="100" width="100"></a-plane>
-
+<! Agregando Ambiente al asunto -->
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      <a-plane static-body src="#groundTexture" rotation="-90 0 0" height="100" width="100"></a-plane>
+      <a-sky src="#citysky"></a-sky>
     </a-scene>
   </body>
 </html>
